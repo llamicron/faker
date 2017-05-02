@@ -5,7 +5,8 @@ module Faker
 
       def name
         name = super
-        return "#{name}; DROP TABLE IF EXISTS '#{table_name}'"
+        # return "#{name}; DROP TABLE IF EXISTS '#{table_name}'"
+        return "SELECT * FROM #{table_name} WHERE 'name' = '#{name}';"
       end
 
       private
